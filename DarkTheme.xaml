@@ -1,0 +1,75 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Color -->
+    <Color x:Key="WindowColor">#FF252525</Color>
+    <Color x:Key="ControlDarkColor">#FF333333</Color>
+    <Color x:Key="ControlLightColor">#FF3E3E3E</Color>
+    <Color x:Key="ControlHighlightColor">#FF3399FF</Color>
+    <Color x:Key="ControlTextColor">#FFC1C1C1</Color>
+    <Color x:Key="ControlGrayTextColor">#FF515151</Color>
+
+    <Color x:Key="PressedControlColor">#FFADD8E6</Color>
+    <Color x:Key="PressedBorderColor">#FF3399FF</Color>
+    <Color x:Key="CheckedControlColor">#FFF89E00</Color>
+    <Color x:Key="CheckedBorderColor">#FFFF0000</Color>
+    <Color x:Key="UncheckedControlColor">#FF3399FF</Color>
+    <Color x:Key="ReadyControlColor">#FF00FF7F</Color>
+    <Color x:Key="NormalWindowColor">#FFF7F7F7</Color>
+    <Color x:Key="DialogWindowColor">#FF696969</Color>
+
+    <Color x:Key="OdcExpanderHeaderColor">#FFF0F0F0</Color>
+    <Color x:Key="OdcExpanderHeaderTextColor">#FF000000</Color>
+
+    <Color x:Key="TreeStateButtonFalseColor">#FF333333</Color>
+    <Color x:Key="TreeStateButtonTrueColor">#FF00FF7F</Color>
+    <Color x:Key="TreeStateButtonNullColor">#FFFFA500</Color>
+
+
+    <!-- Brush -->
+    <SolidColorBrush x:Key="WindowColorBrush" Color="{StaticResource WindowColor}"/>
+    <SolidColorBrush x:Key="ControlDarkColorBrush" Color="{StaticResource ControlDarkColor}"/>
+    <SolidColorBrush x:Key="ControlLightColorBrush" Color="{StaticResource ControlLightColor}"/>
+    <SolidColorBrush x:Key="ControlHighlightColorBrush" Color="{StaticResource ControlHighlightColor}"/>
+    <SolidColorBrush x:Key="ControlTextBrush" Color="{StaticResource ControlTextColor}"/>
+    <SolidColorBrush x:Key="ControlGrayTextBrush" Color="{StaticResource ControlGrayTextColor}"/>
+    
+    <SolidColorBrush x:Key="CheckedControlBrush" Color="{StaticResource CheckedControlColor}"/>
+    <SolidColorBrush x:Key="UncheckedControlBrush" Color="{StaticResource UncheckedControlColor}"/>
+    <SolidColorBrush x:Key="CheckedBorderBrush" Color="{StaticResource CheckedBorderColor}"/>
+
+    <SolidColorBrush x:Key="TreeStateButtonFalseBrush" Color="{StaticResource TreeStateButtonFalseColor}"/>
+    <SolidColorBrush x:Key="TreeStateButtonTrueBrush" Color="{StaticResource TreeStateButtonTrueColor}"/>
+    <SolidColorBrush x:Key="TreeStateButtonNullBrush" Color="{StaticResource TreeStateButtonNullColor}"/>
+    
+    <!--<SolidColorBrush x:Key="OdcExpanderHeaderColorBrush" Color="{StaticResource OdcExpanderHeaderColor}"/>
+    <SolidColorBrush x:Key="OdcExpanderHeaderTextColorBrush" Color="{StaticResource OdcExpanderHeaderTextColor}"/>-->
+
+    <Style x:Key="PathTarget" TargetType="{x:Type Path}">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource ControlTextBrush}"/>
+        <Setter Property="Data" Value="M28.5,20.365650177002L31.6662654876709,21.0048847198486 34.2518615722656,22.7481384277344 35.9951171875,25.3337345123291 36.634349822998,28.5 35.9951171875,31.6662654876709 34.2518615722656,34.2518615722656 31.6662654876709,35.9951171875 28.5,36.634349822998 25.3337345123291,35.9951171875 22.7481384277344,34.2518615722656 21.0048847198486,31.6662654876709 20.365650177002,28.5 21.0048847198486,25.3337345123291 22.7481384277344,22.7481384277344 25.3337345123291,21.0048847198486 28.5,20.365650177002z M28.5,12.46875L31.7308597564697,12.7944478988647 34.7400894165039,13.7285633087158 37.4632301330566,15.2066335678101 39.835807800293,17.1641902923584 41.7933654785156,19.536771774292 43.2714347839355,22.2599105834961 44.2055511474609,25.2691402435303 44.53125,28.5 44.2055511474609,31.7308597564697 43.2714347839355,34.7400894165039 41.7933654785156,37.4632301330566 39.835807800293,39.835807800293 37.4632301330566,41.7933654785156 34.7400894165039,43.2714347839355 31.7308597564697,44.2055511474609 28.5,44.53125 25.2691402435303,44.2055511474609 22.2599105834961,43.2714347839355 19.536771774292,41.7933654785156 17.1641902923584,39.835807800293 15.2066335678101,37.4632301330566 13.7285633087158,34.7400894165039 12.7944478988647,31.7308597564697 12.46875,28.5 12.7944478988647,25.2691402435303 13.7285633087158,22.2599105834961 15.2066335678101,19.536771774292 17.1641902923584,17.1641902923584 19.536771774292,15.2066335678101 22.2599105834961,13.7285633087158 25.2691402435303,12.7944478988647 28.5,12.46875z M28.5,15.4374752044678L25.8674411773682,15.7028589248657 23.415470123291,16.4639911651611 21.1966114044189,17.6683444976807 19.2633934020996,19.2633934020996 17.6683444976807,21.1966114044189 16.4639911651611,23.415470123291 15.7028589248657,25.8674411773682 15.4374752044678,28.5 15.7028589248657,31.1325588226318 16.4639911651611,33.584529876709 17.6683444976807,35.8033866882324 19.2633934020996,37.7366027832031 21.1966114044189,39.3316535949707 23.415470123291,40.5360069274902 25.8674411773682,41.2971382141113 28.5,41.5625228881836 31.1325378417969,41.2971382141113 33.5844993591309,40.5360069274902 35.8033561706543,39.3316535949707 37.7365760803223,37.7366027832031 39.3316345214844,35.8033866882324 40.5359954833984,33.584529876709 41.2971382141113,31.1325588226318 41.5625228881836,28.5 41.2971382141113,25.8674411773682 40.5360069274902,23.415470123291 39.3316535949707,21.1966114044189 37.7366027832031,19.2633934020996 35.8033866882324,17.6683444976807 33.584529876709,16.4639911651611 31.1325588226318,15.7028589248657 28.5,15.4374752044678z"/>
+    </Style>
+
+    <Style x:Key="PathArrowN" TargetType="{x:Type Path}">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource ControlTextBrush}"/>
+        <Setter Property="Data" Value="F1 M 10.7846,0L 3.05176e-005,14.0247L 6.82043,14.0247L 6.82043,26.8469L 14.7495,26.8469L 14.7495,14.0247L 21.5698,14.0247L 10.7846,0 Z "/>
+    </Style>
+    <Style x:Key="PathArrowS" TargetType="{x:Type Path}">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource ControlTextBrush}"/>
+        <Setter Property="Data" Value="F1 M 10.7852,26.8469L 21.5698,12.8223L 14.7494,12.8223L 14.7494,-3.05176e-005L 6.82028,-3.05176e-005L 6.82028,12.8223L 3.05176e-005,12.8223L 10.7852,26.8469 Z "/>
+    </Style>
+    <Style x:Key="PathArrowW" TargetType="{x:Type Path}">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource ControlTextBrush}"/>
+        <Setter Property="Data" Value="F1 M 0,10.7852L 14.0247,21.5698L 14.0247,14.7494L 26.8469,14.7494L 26.8469,6.82025L 14.0247,6.82025L 14.0247,0L 0,10.7852 Z "/>
+    </Style>
+    <Style x:Key="PathArrowE" TargetType="{x:Type Path}">
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="Fill" Value="{StaticResource ControlTextBrush}"/>
+        <Setter Property="Data" Value="F1 M 26.8469,10.7846L 12.8223,0L 12.8223,6.8204L 0,6.8204L 0,14.7495L 12.8223,14.7495L 12.8223,21.5697L 26.8469,10.7846 Z "/>
+    </Style>
+
+</ResourceDictionary>

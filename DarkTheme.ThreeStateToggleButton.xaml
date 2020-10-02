@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="ProteusThreeStateToggleButton" TargetType="{x:Type ToggleButton}">
+        <Border x:Name="border"
+                Background="{StaticResource ControlDarkColorBrush}"
+                BorderBrush="{StaticResource WindowColorBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}">
+            <ContentPresenter x:Name="content"
+                              Focusable="False"
+                              Margin="{TemplateBinding Padding}"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              RecognizesAccessKey="True"
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                              TextElement.Foreground="{StaticResource ControlTextBrush}">
+            </ContentPresenter>
+
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver"/>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="border"
+                                            Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                            To="{StaticResource PressedBorderColor}"
+                                            Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="border"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.56"
+                                             Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="border"
+                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                            To="{StaticResource CheckedControlColor}"
+                                            Duration="0:0:0"/>
+                            <ColorAnimation Storyboard.TargetName="content"
+                                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                            To="{StaticResource WindowColor}"
+                                            Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unchecked">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="border"
+                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                            To="{StaticResource UncheckedControlColor}"
+                                            Duration="0:0:0"/>
+                            <ColorAnimation Storyboard.TargetName="content"
+                                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                            To="{StaticResource WindowColor}"
+                                            Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Indeterminate">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="content"
+                                            Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                            To="{TemplateBinding Foreground}"
+                                            Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        
+        </Border>
+
+    </ControlTemplate>
+
+</ResourceDictionary>

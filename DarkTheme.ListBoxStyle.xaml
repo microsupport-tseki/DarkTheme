@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ProteusListBoxStyle" TargetType="{x:Type ListBox}">
+        <Setter Property="Background" Value="{StaticResource ControlDarkColorBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ControlLightColorBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource ControlTextBrush}"/>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.56"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

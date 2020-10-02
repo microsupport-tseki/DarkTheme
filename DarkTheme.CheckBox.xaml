@@ -1,0 +1,133 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="DarkThemeCheckBox" TargetType="{x:Type CheckBox}">
+        
+        <Grid x:Name="templateRoot"
+              Background="Transparent"
+              SnapsToDevicePixels="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border x:Name="checkBoxBorder"
+                    BorderBrush="{StaticResource ControlDarkColorBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    Background="{StaticResource ControlDarkColorBrush}"
+                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    Margin="1"
+                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                <Grid x:Name="markGrid">
+                    <Path x:Name="optionMark"
+                          Data="F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z "
+                          Fill="{StaticResource ControlTextBrush}"
+                          Margin="1"
+                          Opacity="0"
+                          Stretch="None"/>
+                    <Rectangle x:Name="indeterminateMark"
+                               Fill="{StaticResource ControlLightColorBrush}"
+                               Margin="2"
+                               Opacity="0"/>
+                </Grid>
+            </Border>
+            <ContentPresenter x:Name="contentPresenter"
+                              Grid.Column="1"
+                              Focusable="False"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              Margin="{TemplateBinding Padding}"
+                              RecognizesAccessKey="True"
+                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                              TextElement.Foreground="{StaticResource ControlTextBrush}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal"/>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="checkBoxBorder"
+                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                            To="{StaticResource ControlLightColor}"
+                                            Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="checkBoxBorder"
+                                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                            To="{StaticResource ControlHighlightColor}"
+                                            Duration="0:0:0"/>
+                            <ColorAnimation Storyboard.TargetName="checkBoxBorder"
+                                            Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                            To="{StaticResource ControlHighlightColor}"
+                                            Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="templateRoot"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.56"
+                                             Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused"/>
+                    <VisualState x:Name="Unfocused"/>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="optionMark"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="1"
+                                             Duration="0:0:0"/>
+                            <DoubleAnimation Storyboard.TargetName="indeterminateMark"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0"
+                                             Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unchecked">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="optionMark"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0"
+                                             Duration="0:0:0"/>
+                            <DoubleAnimation Storyboard.TargetName="indeterminateMark"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0"
+                                             Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Indeterminate">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="optionMark"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0"
+                                             Duration="0:0:0"/>
+                            <DoubleAnimation Storyboard.TargetName="indeterminateMark"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="1"
+                                             Duration="0:0:0"/>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="ValidationStates">
+                    <VisualState x:Name="Valid"/>
+                    <VisualState x:Name="InvalidFocused"/>
+                    <VisualState x:Name="InvalidUnfocused"/>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+        
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsFocused" Value="true">
+                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource ControlHighlightColorBrush}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+        
+    </ControlTemplate>
+
+</ResourceDictionary>
